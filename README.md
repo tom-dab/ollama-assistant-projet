@@ -127,9 +127,38 @@ npm start
 
 Le serveur démarre sur **http://localhost:3000**
 
+## 🧪 Tests Unitaires
+
+Le projet inclut une suite complète de tests unitaires pour le backend et le frontend.
+
+### Lancer les tests
+
+```bash
+# Exécuter tous les tests
+npm test
+
+# Mode watch (redémarre automatiquement)
+npm run test:watch
+
+# Générer un rapport de couverture
+npm run test:coverage
+```
+
+### Couverture de code
+
+Les tests couvrent :
+- ✅ Routes API backend (health, models, chat)
+- ✅ Validation des données
+- ✅ Gestion des erreurs
+- ✅ Fonctions utilitaires frontend
+- ✅ Protection XSS
+- ✅ Formatage et affichage
+
+Consulter [TESTS.md](./TESTS.md) pour plus de détails sur les tests.
+
 ## 💻 Utilisation
 
-1. **Ouvrir l'application** : Accédez à http://localhost:3000 dans votre navigateur
+1. **Ouvrir l'application** : Accédez à http://localhost:3001 dans votre navigateur
 
 2. **Vérifier le statut** : L'indicateur en haut doit afficher "Connecté à Ollama" en vert
 
@@ -316,12 +345,3 @@ MIT - Projet réalisé dans le cadre d'un atelier pédagogique
 **[Vos noms et prénoms]**
 
 Projet développé avec l'assistance d'IA générative dans le cadre du cours "Coder avec l'IA générative".
-
-
-
-
-# Créer la structure de dossiers
-New-Item -Path "ollama-web-interface" -ItemType Directory
-cd ollama-web-interface
-New-Item -Path "backend" -ItemType Directory
-New-Item -Path "frontend" -ItemType Directory

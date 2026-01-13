@@ -10,7 +10,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 const OLLAMA_API_URL = 'http://localhost:11434';
 
 // Middleware

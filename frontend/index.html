@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interface web pour interagir avec des modèles Ollama locaux">
+  <title>Ollama Assistant - Interface Locale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- En-tête de l'application -->
+  <header>
+    <div class="container">
+      <h1>
+        <span aria-hidden="true">🤖</span>
+        Ollama Assistant
+      </h1>
+      <p class="subtitle">Interface locale pour vos modèles d'IA</p>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="container">
+    <!-- Section de configuration -->
+    <section class="config-section" aria-labelledby="config-title">
+      <h2 id="config-title" class="visually-hidden">Configuration</h2>
+      
+      <!-- Indicateur de statut -->
+      <div id="status-indicator" class="status-indicator" role="status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="status-text">Vérification de la connexion...</span>
+      </div>
+
+      <!-- Sélection du modèle -->
+      <div class="model-selector">
+        <label for="model-select">Modèle :</label>
+        <select id="model-select" aria-describedby="model-help" disabled>
+          <option value="">Chargement des modèles...</option>
+        </select>
+        <span id="model-help" class="help-text">Sélectionnez le modèle d'IA à utiliser</span>
+      </div>
+    </section>
+
+    <!-- Zone de chat -->
+    <section class="chat-section" aria-labelledby="chat-title">
+      <h2 id="chat-title" class="visually-hidden">Conversation</h2>
+      
+      <div id="chat-container" class="chat-container" role="log" aria-live="polite" aria-atomic="false">
+        <div class="welcome-message">
+          <p>👋 Bienvenue ! Sélectionnez un modèle et commencez à discuter.</p>
+          <p class="help-text">Assurez-vous qu'Ollama est lancé en arrière-plan.</p>
+        </div>
+      </div>
+
+      <!-- Formulaire de saisie -->
+      <form id="chat-form" class="chat-form">
+        <label for="user-input" class="visually-hidden">Votre message</label>
+        <textarea 
+          id="user-input" 
+          placeholder="Posez votre question ici..."
+          rows="3"
+          aria-describedby="input-help"
+          required
+        ></textarea>
+        <span id="input-help" class="visually-hidden">Appuyez sur Entrée pour envoyer, Maj+Entrée pour une nouvelle ligne</span>
+        
+        <button type="submit" id="send-button" disabled aria-label="Envoyer le message">
+          <span aria-hidden="true">📤</span>
+          Envoyer
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="container">
+      <p>Projet réalisé avec l'assistance d'IA générative | Ollama Interface</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
